@@ -1,0 +1,65 @@
+Importante : 
+
+java.lang.NoSuchMethodError: org.hamcrest.Matcher.describeMismatch(Ljava/lang/Object;Lorg/hamcrest/Description;)V
+
+This occurs when the hamcrest version provided by JUnit does not match the hamcrest version you previously downloaded. There are two solutions:
+put hamcrest.jar before the junit.jar in your classpath
+download the hamcrest free version of JUnit
+
+
+*******************************************
+  Ejercicios basicos
+*******************************************
+
+	1.	AssertThatTest : Test que muestra las diferencias entre hacer algo con assert de JUnit y Hamcrest
+	
+			@Test
+			public void shouldBeExactMatch() {
+				//JUnit
+				assertEquals(DEFAULT_VALUE, testValue);
+				
+				//Hamcrest (todos los assertThat hacen lo mismo)
+				assertThat(testValue, equalTo(DEFAULT_VALUE));
+				assertThat(testValue, is(DEFAULT_VALUE));
+				assertThat(testValue, is(equalTo(DEFAULT_VALUE)));
+			}
+			
+			@Test
+			public void shouldBePartialMatch() {
+				//JUnit 
+				assertFalse(OTHER_VALUE.equals(testValue));
+				
+				//Hamcrest (todos los assertThat hacen lo mismo)
+				assertThat(testValue, not(equalTo(OTHER_VALUE)));
+				assertThat(testValue, is(not(OTHER_VALUE)));
+				assertThat(testValue, is(not(equalTo(OTHER_VALUE))));
+			}
+
+	2.	CoreMatchersTest : Test que prueba los Matcher "base"
+
+	3.	CompoundMatchersTest : Test que hace diferentes pruebas con matchers combinados 
+	
+		Nota : Probar elementos contra la lista y descomentar los test siguientes
+	
+			assertThat(list, hasSize(3));
+			
+			assertThat(list, contains(1, DEFAULT_VALUE, 10));
+			//assertThat(list, contains(10, 1, DEFAULT_VALUE));
+			assertThat(list, containsInAnyOrder(1, DEFAULT_VALUE, 10));
+			assertThat(list, everyItem(greaterThan(0)));
+			
+	4. BasicMatchersTest : Test que permite hacer comparaciones de igualdad	
+	
+	5. LogicalMatchersTest : Test que permite hacer comparaciones con otros objetos aplicando logica
+	
+	6. ObjectMatchersTest : Test que permite hacer comparaciones con objetos
+	
+	7. BaseMatcherTest : Test que prueba un matcher propio que evalua si un objeto es el id del usuario (usa BaseMatcher)
+	
+		Nota : La clase UserBaseMatcher incluye varias clases estáticas en su interior
+	
+	8. HasEqualsNameMatcher : Test que prueba que el nombre es el mismo entre objetos (usa Base MAtcher)
+	
+		Nota : La clase en un matcher por si solo
+	
+	9. UserMatcherTest : Test que prueba un matcher propio que evalua si un objeto es el id del usuario (usa un TypeSafeMatcher)

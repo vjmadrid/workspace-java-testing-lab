@@ -1,0 +1,55 @@
+
+*******************************************
+  Ejercicios basicos
+*******************************************
+
+	1.	CalculateTest : Plantear un test "superbasico de TDD" que realice la suma de dos numeros sobre la clase Calculate
+	
+			assertEquals(3, calculate.sum(1, 2));
+			
+		Explicar problematica del ambito de test y donde colocar el codigo	
+
+	2.	Calculate : Crear la clase con el metodo indicado
+
+*******************************************
+ Ejercicios core
+*******************************************
+
+	3.	BasicTest : Test que trata de comprobar el tamaño de una lista Iniciando-Destruyendo los datos en cada test
+	
+			shouldBeOneItemList();
+			shouldBeEmptyList();
+
+	4. 	FixtureMethodsTest : Test que muestra el orden de ejecución de los métodos utilizados
+		Nota : Mostrar los diferentes tipos de inicialización
+	
+	5. 	SetupTeardownTest : Test que trata de comprobar el tamaño de una lista (Mejorando el ejercicio 3)
+	
+	6. 	IgnoreTest : Test que usando la base del ejercicio anterior ignora un test (verificar que no se lanza)
+	
+	7. 	AssertionsTest : Test que prueba diferentes asserts
+
+	8. 	JUnitRunnerLauncher : Crear un lanzador de una clase de test cuyos resultados son devueltos para trabajar con ellos
+
+	9. 	CalculateParametizedTest : Test que permite precargar un juego de datos sobre la operación de suma del ejercicio Calculate
+	
+	10.	SuiteTest : Test que permite lanzar un conjunt de test
+	
+	11. ExceptionTest : Test que captura una excepcion
+	
+	12. RulesTest : Test que hace uso de @Rule para obtener más información
+	
+	13. UserTest : Test que prueba una clase entidad
+	
+*******************************************
+ Ejercicio Extra
+*******************************************	
+
+PROBLEMA "AÑO BISIESTO"
+
+Un año bisiesto es un año con 366 días en vez de 365. Cada 4 años, febrero tiene un día más. Esto se hace porque un año oficialmente no tiene 365 días, sino 365,25 días. Añadiendo un día cada 4 años, se soluciona este problema. 
+
+Un año es bisiesto si es múltiplo de 4 (por ejemplo 1984). Los años múltiplos de 100 no son bisiestos, salvo si ellos son también múltiplos de 400 (2000 es bisiesto, pero;  1800 no lo es).
+
+	14. LeapYearValidatorTest.java : Test para probar la clase validadora
+	15. LeapYearValidator.java : Crear clase con el algoritmo selecionado	

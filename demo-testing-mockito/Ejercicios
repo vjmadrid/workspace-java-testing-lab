@@ -1,0 +1,56 @@
+
+*******************************************
+  Ejercicios basicos
+*******************************************
+
+	1.	StubbingTest : Test que muestra diferentes tipos de comportamientos de los mocks
+	
+	2.	BehaviorVerifyTest : Test verificar el comportamiento de una lista con las siguientes acciones
+			add("test");
+			clear();
+			
+	3.	NeverInvocationsVerifyTest : Test que verifica que no se ha realizado una accion concreta con un objeto
+		y niguna acción sobre otro
+	
+	4.	NumberInvocationsVerifyTest : Test que verificar el numero concreto de acciones
+		Nota : Se han realizado varias insercciones de elementos en una tabla
+	
+	5. OrderVerifyTest : Test que verifica el orden concreto de ejecución
+	
+		InOrder inOrder = inOrder(mockedList, secondMockedList);	
+	
+	6.	RedundantInvocationsVerifyTest : Test que verifica que no se roduce una excepcion especifica al hacer comprobaciones
+		
+	7. 	AnnotationBehaviorVerifyTest : Test que hace uso de anotaciones	
+			@Mock
+			
+			initMocks(this);
+	
+	8. 	RunnerBehaviorVerifyTest : Test que muestra el uso de un runner en concreto
+	
+	9.	ArgumentMatchersTest : Test que muestra el uso de generaizacion en los matcher
+	
+			when(mockedList.get(anyInt())).thenReturn("test");
+	
+			String value = mockedList.get(0);
+			String otherValue = mockedList.get(99);
+	
+	
+	10. ArgumentCaptorTest : Test que muesra la captura de arguentos
+		
+*******************************************
+ Ejercicios Proyectos Reales
+*******************************************
+
+	11.	MessageConstantTest : Test para probar una clase de constantes
+	
+	12. MessageTest : Test que trabaja de entidad
+	
+	13. MessageDataFactoryTest : Test que trabaja con una factoria de objetos
+	
+	14. GuasapDaoTest : Test que trabaja con un repositorio
+	
+	15. GuasapServiceTest : Test que trabaja con servicios
+	
+		Mockear los daos
+		
