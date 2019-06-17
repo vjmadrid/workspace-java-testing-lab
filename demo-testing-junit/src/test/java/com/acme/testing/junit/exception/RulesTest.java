@@ -1,10 +1,14 @@
 package com.acme.testing.junit.exception;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.TestName;
 
@@ -16,7 +20,7 @@ public class RulesTest {
 	public TestName name = new TestName();
 
 	@Rule
-	public ExpectedException expectedException;
+	public ExpectedException expectedException = ExpectedException.none();
 
 	
 	@Before
@@ -44,6 +48,15 @@ public class RulesTest {
 	
 		System.out.println("[@Test] : "+name.getMethodName());
 		assertEquals("shouldBeEmptyList", name.getMethodName());
+	}
+	
+	public void shouldBeIndexOutOfBoundsException() throws IndexOutOfBoundsException {
+		System.out.println("[@Test Exception] : shouldBeIndexOutOfBoundsException");	
+	
+		expectedException.expect(IndexOutOfBoundsException.class);
+		expectedException.expectMessage("Index: 0, Size: 0");
+		
+		testList.get(0); // execution will never get past this line
 	}
 
 }

@@ -36,5 +36,11 @@ public class IgnoreTest {
 	public void shouldBeIgnored() {
 		System.out.println("[@Ignore] : shouldBeIgnored");
 	}
+	
+	@Ignore("Ignore Message")
+	@Test
+	public void shouldBeIgnoredWithMessage() {
+		System.out.println("[@Ignore] : shouldBeIgnoredWithMessage");
+	}
 
 }

@@ -36,5 +36,11 @@ public class ExceptionTest {
 		System.out.println("[@Test Exception] : shouldBeRuntimeException");	
 		throw new RuntimeException();
 	}
+	
+	@Test(expected=IndexOutOfBoundsException.class)
+	public void shouldBeIndexOutOfBoundsException() {
+		System.out.println("[@Test Exception] : shouldBeIndexOutOfBoundsException");	
+		new ArrayList<Object>().get(0); 
+	}
 
 }
