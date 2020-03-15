@@ -42,7 +42,7 @@
 
 		<!-- *** Third Party Libraries *** -->
 
-		<!-- commons-lang : class utilities -->
+		<!-- commons-lang3 : class utilities -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
