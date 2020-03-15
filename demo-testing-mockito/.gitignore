@@ -1,3 +1,5 @@
+### Java ###
+
 # Compiled class file
 *.class
 
@@ -13,8 +15,20 @@
 *.tar.gz
 *.rar
 
-# IDE Project files
-/target/
-.settings
-.classpath
+### Eclipse ###
+.metadata/
+.settings/
 .project
+.classpath
+.loadpath
+.recommenders
+
+target/
+bin/
+tmp/
+
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties

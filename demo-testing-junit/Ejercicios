@@ -31,22 +31,24 @@
 	5. 	AssertionsTest : Test que prueba diferentes asserts
 	
 	6. 	ExceptionTest : Test que captura una excepción
+	
+	7. 	FailTest : Test que geenra un fail()
 
-	7.	RuleExceptionTest : Tes que captura una excepción mediante reglas para mostar el mensaje
+	8.	RuleExceptionTest : Tes que captura una excepción mediante reglas para mostar el mensaje
 	
-	8. 	TimeoutTest : Test cuya comprobación se realiza mediante timeout
+	9. 	TimeoutTest : Test cuya comprobación se realiza mediante timeout
 	
-	9. 	MethodOrderTest : Test que permite ejecutar en un orden
+	10. 	MethodOrderTest : Test que permite ejecutar en un orden
 	
-	10.	SuiteTest : Test que permite lanzar un conjunto de test
+	11.	SuiteTest : Test que permite lanzar un conjunto de test
 	
-	11. CalculateParametizedTest : Test que permite precargar un juego de datos sobre la operación de suma del ejercicio Calculate
+	12. CalculateParametizedTest : Test que permite precargar un juego de datos sobre la operación de suma del ejercicio Calculate
 	
-	12. TemporaryFolderTest : Test que permite generar un fichero temporal para trabajar con ficheros
+	13. TemporaryFolderTest : Test que permite generar un fichero temporal para trabajar con ficheros
 	
-	13. JUnitRunnerLauncher : Crear un lanzador de una clase de test cuyos resultados son devueltos para trabajar con ellos
+	14. JUnitRunnerLauncher : Crear un lanzador de una clase de test cuyos resultados son devueltos para trabajar con ellos
 
-	14. UserTest : Test que prueba una clase entidad
+	15. UserTest : Test que prueba una clase entidad
 
 
 *******************************************

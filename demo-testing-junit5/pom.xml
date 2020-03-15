@@ -18,10 +18,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- Dependency Versions -->
-
 		<junit.platform.version>1.6.0</junit.platform.version>
-
-		 
 		<junit.jupiter.version>5.6.0</junit.jupiter.version>
 		
 		<junit.version>4.12</junit.version>
@@ -29,11 +26,12 @@
 		
 		<mockito.version>2.25.0</mockito.version>
 		
+		<assertj-core.version>3.11.1</assertj-core.version>
 		
-
 		<!-- Plugins -->
 		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 	</properties>
 	
 	<profiles>
@@ -54,38 +52,62 @@
 	<dependencies>
 
 		<!-- *** Architecture Libraries *** -->
+		
+		<!-- Use Testing Architecture Library o specific junit version 5.x -->
+		
+		<!-- 
+		<dependency>
+			<groupId>com.acme.architecture.testing</groupId>
+			<artifactId>architecture-testing</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
+		 -->
 
 		<!-- *** Third Party Libraries *** -->
 
-		<!-- commons-lang : class utilities -->
+		<!-- commons-lang3 : class utilities -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.8.1</version>
+			<version>3.9</version>
 		</dependency>
 		
+		<!-- commons-collections4 : collection utilities -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-collections4</artifactId>
+		    <version>4.4</version>
+		</dependency>
+		
+		<!-- commons-io : class utilities for : file, streams, file comparator, file filters, ... -->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
 		</dependency>
 		
-		<!-- junit-platform-runner : unit test framework v5 (Add JUnit Platform + API) -->
+		
+		
+		<!-- * JUnit Platform * : Running and discovering test (for use in : tools (Eclipse, Idea,...) and build tools (Maven, Gradle, etc.)) -->
+		
+		<!-- junit-platform-runner : Platform unit test framework v5 (Add JUnit Platform + TestEngine API) -> Basic execute test -->
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-runner</artifactId>
 			<version>${junit.platform.version}</version>
 		</dependency>
 		
-		<!-- junit-platform-testkit : XXX -->
+		<!-- junit-platform-testkit : [Optional] Platform provides Test Kit API for JUnit Platform -->
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-testkit</artifactId>
 			<version>${junit.platform.version}</version>
 		</dependency>
+		
+		<!-- * JUnit Jupiter * -->
 
-		<!-- junit-jupiter-engine : unit test framework v5 (Add JUnit Platform + API) -->
-
+		<!-- junit-jupiter-engine : unit test framework v5 (Add JUnit Platform + API) Use write test (include : annotations, etc.) -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
@@ -94,7 +116,6 @@
 
 
 		<!-- junit-vintage-engine : unit test framework for execute JUnit 3 and JUnit 4 (Add JUnit 4.13 transitively depends version vintage) -->
-
 		<dependency>
 			<groupId>org.junit.vintage</groupId>
 			<artifactId>junit-vintage-engine</artifactId>
@@ -102,15 +123,21 @@
 		</dependency>
 
 		
-		<!-- junit-jupiter-params-engine : Tool used for parameterized test -->
-
+		<!-- junit-jupiter-params : Tool used for parameterized test -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-params</artifactId>
 			<version>${junit.jupiter.version}</version>
 		</dependency>
 
+		<!-- assertj-core : assertions for testing -->
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>${assertj-core.version}</version>
+		</dependency>
 		
+		<!-- mockito : mocking framework -->
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
@@ -123,15 +150,7 @@
 			<version>${mockito.version}</version>
 		</dependency>
 		
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>3.11.1</version>
-		</dependency>
-			
 		
-	
-
 	</dependencies>
 
 	<build>
@@ -166,21 +185,25 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.2</version>
 				<configuration>
+				
 					<includes>
 						<include>**/Test*.java</include>
 						<include>**/*Test.java</include>
 						<include>**/*Tests.java</include>
 						<include>**/*TestCase.java</include>
 					</includes>
+					
 					<properties>
 						<!-- <includeTags>fast</includeTags> -->
 						<excludeTags>slow</excludeTags>
 					</properties>
+					
 					<skipTests>${skip.unit.tests}</skipTests>
 					<testFailureIgnore>false</testFailureIgnore>
 					
 					<groups>${includeTags}</groups>
 					<excludedGroups>failingTest</excludedGroups>
+					
 					<properties>
 						<configurationParameters>
 							junit.jupiter.execution.parallel.enabled=true
@@ -189,6 +212,7 @@
 							junit.platform.output.capture.stderr=true
 						</configurationParameters>
 					</properties>
+					
 				</configuration>
 			</plugin>
 

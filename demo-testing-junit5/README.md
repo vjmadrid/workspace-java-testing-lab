@@ -3,14 +3,28 @@
 Este proyecto representa a una serie de ejemplos sobre el uso y configuración de **JUnit5**
 
 
+
+
+
 ## Stack Tecnológico
 
 * Java 8
 * [Maven 3](https://maven.apache.org/) - Gestión de dependencias
 
+Dependencias con proyectos de arquitectura
+
+* Si se considera utilizar esta opción (descomentar la referencia)
+
 Dependencias terceros
 
-* **commons-lang3** [3.8.1] : Framework de utilidades para las clases
+* **commons-lang3** [3.9] : Framework de utilidades para las clases
+* **commons-collections4** [4.4] : Framework de utilidades para colecciones
+* **commons-io** [2.6] : Framework de utilidades para trabajar con ficheros
+* **junit** [4.13] : Framework de testing unitario
+
+
+
+
 
 ## Prerrequisitos
 
@@ -18,6 +32,9 @@ Se definen que elementos se necesitan para instalar el software
 
 * Tener instalado Java 8 (Se requiere versión 1.5+)
 * Tener instalado Maven (Se aconseja que sea 3+)
+
+
+
 
 
 ### Instalación
@@ -37,9 +54,15 @@ mvn clean install
 El resultado será la generación de un artefacto en tu repositorio maven
 
 
+
+
+
 ## Testing
 
 Este proyecto NO dispone de test
+
+
+
 
 
 ## Despliegue
@@ -47,10 +70,17 @@ Este proyecto NO dispone de test
 No aplica
 
 
+
+
+
 ## Versionado
 
 **Nota :** Se utiliza [SemVer](http://semver.org/) para el versionado. 
 Para ver las versiones disponibles acceder a los tags del repositorio
+
+
+
+
 
 ## Autores
 
