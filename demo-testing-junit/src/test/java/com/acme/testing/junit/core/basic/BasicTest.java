@@ -1,12 +1,8 @@
-package com.acme.testing.junit5.core;
+package com.acme.testing.junit.core.basic;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.*;
+import java.util.*;
+import org.junit.*;
 
 public class BasicTest {
 
@@ -17,11 +13,12 @@ public class BasicTest {
 		System.out.println("[@Test] : shouldBeOneItemList");
 		
 		testList = new ArrayList<String>();
-
+		
 		testList.add("element 1");
+		
 		assertEquals(1, testList.size());
 		
-		testList.clear();
+		testList.clear();		
 	}
 	
 	@Test

@@ -2,7 +2,6 @@ package com.acme.testing.junit5.core;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,35 +31,37 @@ public class FixtureMethodsTest {
 	// @Before JUnit4
 	@BeforeEach
 	public void executeBeforeTestMethod() {
-		testList = new ArrayList<String>();
 		System.out.println("\t[@BeforeEach] : executeBeforeTestMethod");
+		testList = new ArrayList<String>();
 	}
 
 	// @After JUnit4
 	@AfterEach
 	public void executeAfterTestMethod() {
-		testList.clear();
 		System.out.println("\t[@AfterEach] : executeAfterTestMethod");
+		
+		testList.clear();
 	}
 
 	@Test
 	public void shouldBeEmptyList() {
-		assertTrue(testList.isEmpty());
 		System.out.println("\t\t[@Test] : shouldBeEmptyList");
-
+		
+		assertTrue(testList.isEmpty());
 	}
 
-	@Test
-	void shouldBefailingTest() {
-		System.out.println("\t\t[@Test] : shouldBefailingTest");
-		fail("a failing test");
-	}
+//	@Test
+//	void shouldBefailingTest() {
+//		System.out.println("\t\t[@Test] : shouldBefailingTest");
+//		fail("a failing test");
+//	}
 
 	@Test
 	public void shouldBeOneItemList() {
+		System.out.println("\t\t[@Test]: shouldBeOneItemList");
+		
 		testList.add("element 1");
 		assertEquals(1, testList.size());
-		System.out.println("\t\t[@Test]: shouldBeOneItemList");
 	}
 
 }

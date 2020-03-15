@@ -1,40 +1,32 @@
-package com.acme.testing.junit5.core;
+package com.acme.testing.junit5.compatibility;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
+import java.util.*;
+import org.junit.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
-
-public class SetupTeardownTest {
+public class SetupTeardownJUnit4Test {
 
 	private List<String> testList;
 	
-	@BeforeEach
+	@Before
 	public void setUp() {
 		testList = new ArrayList<String>();
 	}
 
-	@AfterEach
+	@After
 	public void tearDown() {
 		testList.clear();
 	}
 
-	@Tag("DEV")
 	@Test
 	public void shouldBeOneItemList() {
 		System.out.println("[@Test] : shouldBeOneItemList");
+		
 		testList.add("element 1");
 		
 		assertEquals(1, testList.size());
 	}
 	
-	@Tag("PROD")
 	@Test
 	public void shouldBeEmptyList() {
 		System.out.println("[@Test] : shouldBeEmptyList");

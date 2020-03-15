@@ -4,7 +4,7 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
-import com.acme.testing.junit.core.BasicTest;
+import com.acme.testing.junit.core.basic.BasicTest;
 
 public class JUnitRunnerLauncher {
 

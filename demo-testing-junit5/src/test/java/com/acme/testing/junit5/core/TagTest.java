@@ -8,7 +8,7 @@ import java.util.List;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@Tag("Test case")
+@Tag("Branch")
 public class TagTest {
 	
 	private List<String> testList;
@@ -16,13 +16,27 @@ public class TagTest {
 	@Test
 	@Tag("Method")
 	public void shouldBeOneItemList() {
+		System.out.println("[@Test] : shouldBeOneItemList");
+		
 		testList = new ArrayList<String>();
 
 		testList.add("element 1");
 		assertEquals(1, testList.size());
 		
 		testList.clear();
-		System.out.println("[@Test] : shouldBeOneItemList");
+		
+	}
+	
+	@Test
+	@Tag("excludeTag")
+	public void excludeTagTest() {
+		// no-op
+	}
+
+	@Test
+	@Tag("includeTag")
+	public void includeTagTest() {
+		// no-op
 	}
 
 }

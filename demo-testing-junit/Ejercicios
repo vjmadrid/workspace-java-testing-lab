@@ -11,38 +11,46 @@
 
 	2.	Calculate : Crear la clase con el metodo indicado
 
+
 *******************************************
  Ejercicios core
 *******************************************
 
-	3.	BasicTest : Test que trata de comprobar el tamaño de una lista Iniciando-Destruyendo los datos en cada test
+	1.	BasicTest : Test que trata de comprobar el tamaño de una lista Iniciando-Destruyendo los datos en cada test
 	
 			shouldBeOneItemList();
 			shouldBeEmptyList();
 
-	4. 	FixtureMethodsTest : Test que muestra el orden de ejecución de los métodos utilizados
+	2. 	FixtureMethodsTest : Test que muestra el orden de ejecución de los métodos utilizados
 		Nota : Mostrar los diferentes tipos de inicialización
 	
-	5. 	SetupTeardownTest : Test que trata de comprobar el tamaño de una lista (Mejorando el ejercicio 3)
+	3. 	SetupTeardownTest : Test que trata de comprobar el tamaño de una lista (Mejorando el ejercicio 3)
 	
-	6. 	IgnoreTest : Test que usando la base del ejercicio anterior ignora un test (verificar que no se lanza)
+	4. 	IgnoreTest : Test que usando la base del ejercicio anterior ignora un test (verificar que no se lanza)
 	
-	7. 	AssertionsTest : Test que prueba diferentes asserts
+	5. 	AssertionsTest : Test que prueba diferentes asserts
+	
+	6. 	ExceptionTest : Test que captura una excepción
 
-	8. 	JUnitRunnerLauncher : Crear un lanzador de una clase de test cuyos resultados son devueltos para trabajar con ellos
+	7.	RuleExceptionTest : Tes que captura una excepción mediante reglas para mostar el mensaje
+	
+	8. 	TimeoutTest : Test cuya comprobación se realiza mediante timeout
+	
+	9. 	MethodOrderTest : Test que permite ejecutar en un orden
+	
+	10.	SuiteTest : Test que permite lanzar un conjunto de test
+	
+	11. CalculateParametizedTest : Test que permite precargar un juego de datos sobre la operación de suma del ejercicio Calculate
+	
+	12. TemporaryFolderTest : Test que permite generar un fichero temporal para trabajar con ficheros
+	
+	13. JUnitRunnerLauncher : Crear un lanzador de una clase de test cuyos resultados son devueltos para trabajar con ellos
 
-	9. 	CalculateParametizedTest : Test que permite precargar un juego de datos sobre la operación de suma del ejercicio Calculate
-	
-	10.	SuiteTest : Test que permite lanzar un conjunt de test
-	
-	11. ExceptionTest : Test que captura una excepcion
-	
-	12. RulesTest : Test que hace uso de @Rule para obtener más información
-	
-	13. UserTest : Test que prueba una clase entidad
-	
+	14. UserTest : Test que prueba una clase entidad
+
+
 *******************************************
- Ejercicio Extra
+ Ejercicio Extra TDD
 *******************************************	
 
 PROBLEMA "AÑO BISIESTO"
