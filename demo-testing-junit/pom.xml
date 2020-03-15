@@ -22,6 +22,7 @@
 		<!-- Plugins -->
 		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 	</properties>
 	
 	<dependencies>
@@ -29,12 +30,15 @@
 		<!-- *** Architecture Libraries *** -->
 
 		<!-- Use Testing Architecture Library o specific junit version 4.x -->
+		
+		<!-- 
 		<dependency>
 			<groupId>com.acme.architecture.testing</groupId>
 			<artifactId>architecture-testing</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
+		 -->
 
 		<!-- *** Third Party Libraries *** -->
 
@@ -98,20 +102,24 @@
 				reports in the directory target/surefire-reports -->
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.2</version>
+				<version>${maven-surefire-plugin.version}</version>
 				<configuration>
+				
 					<includes>
 						<include>**/Test*.java</include>
 						<include>**/*Test.java</include>
 						<include>**/*Tests.java</include>
 						<include>**/*TestCase.java</include>
 					</includes>
+					
 					<properties>
 						<!-- <includeTags>fast</includeTags> -->
 						<excludeTags>slow</excludeTags>
 					</properties>
+					
 					<skipTests>${skip.unit.tests}</skipTests>
 					<testFailureIgnore>false</testFailureIgnore>
+					
 				</configuration>
 			</plugin>
 
