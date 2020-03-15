@@ -1,4 +1,4 @@
-package com.acme.testing.junit5.basic;
+package com.acme.testing.junit5.testkit.basic;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

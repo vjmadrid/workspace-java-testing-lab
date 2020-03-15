@@ -2,6 +2,7 @@ package com.acme.testing.junit5.core.timeout;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
+import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class TimeoutTest {
@@ -67,5 +69,15 @@ public class TimeoutTest {
 			}
 		});
 	}
+	
+	@Test
+	@Disabled
+    void shouldBeTimeoutExceededWithPreemptiveTermination() {
+        // The following assertion fails with an error message similar to:
+        // execution timed out after 10 ms
+        assertTimeoutPreemptively(Duration.ofMillis(10), () -> {
+            Thread.sleep(100);
+        });
+    }
 	
 }

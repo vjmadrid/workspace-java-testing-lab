@@ -1,99 +1,99 @@
 # demo-testing-junit5
 
-Este proyecto representa a una serie de ejemplos sobre el uso y configuración de **JUnit5**
+This project represents a collection of examples to explain the use and configuration of **JUnit 5**
 
 
 
 
 
-## Stack Tecnológico
+## Technological Stack
 
 * Java 8
-* [Maven 3](https://maven.apache.org/) - Gestión de dependencias
+* [Maven 3](https://maven.apache.org/) - Dependency Management
 
-Dependencias con proyectos de arquitectura
+Dependencies with architecture projects
 
-* Si se considera utilizar esta opción (descomentar la referencia)
+* If you consider using this option, uncomment the POM reference or use your own reference
 
-Dependencias terceros
+Third Party Dependencies
 
-* **commons-lang3** [3.9] : Framework de utilidades para las clases
-* **commons-collections4** [4.4] : Framework de utilidades para colecciones
-* **commons-io** [2.6] : Framework de utilidades para trabajar con ficheros
+* **commons-lang3** [3.9] : class utilities
+* **commons-collections4** [4.4] : collection utilities
+* **commons-io** [2.6] : class utilities for : file, streams, file comparator, file filters, ...
 
-* **junit-platform-runner** [1.6.0] : Platform unit test framework v5 (Add JUnit Platform + TestEngine API) -> Basic execute test
-* **junit-platform-testkit** [1.6.0] : [Optional] Platform provides Test Kit API for JUnit Platform
+* **junit-platform-runner** [1.6.0] : platform unit test framework v5 (Add JUnit Platform + TestEngine API) -> Basic execute test
+* **junit-platform-testkit** [1.6.0] : [Optional] platform provides Test Kit API for JUnit Platform
 		
 
 * **junit-jupiter-engine** [5.6.0] : unit test framework v5 (Add JUnit Platform + API) Use write test (include : annotations, etc.)
-* **junit-vintage-engine : unit test framework for execute JUnit ** [5.6.0] : unit test framework for execute JUnit 3 and JUnit 4 (Add JUnit 4.13 transitively depends version vintage)
-* **junit-jupiter-params : Tool used for parameterized test
+* **junit-vintage-engine** [5.6.0] : unit test framework for execute JUnit 3 and JUnit 4 (Add JUnit 4.13 transitively depends version vintage)
+* **junit-jupiter-params : tool used for parameterized test
 
 
-* **assertj-core** [3.11.1] : assertions for testing
-* **mockito-core** [3.11.1] : mocking framework
+* **assertj-core** [3.11.1] : matching / asserts framework
+* **mockito-core** [2.25.0] : mocking framework
 * **mockito-junit-jupiter** [2.25.0] : mocking framework integration with Jupiter JUnit
 
 
 
 
 
-## Prerrequisitos
+## Prerequisites
 
-Se definen que elementos se necesitan para instalar el software
+Define what elements are needed to install the software
 
-* Tener instalado Java 8 (Se requiere versión 1.5+)
-* Tener instalado Maven (Se aconseja que sea 3+)
-
-
+* Java 8 installed (1.5+ version required)
+* Maven installed  (3+)
 
 
 
-### Instalación
 
-Pasos a seguir 
 
-* Arrancar la consola
-* Situarse en el PATH de instalación (el lugar donde se encuentra el proyecto)
-* Verificar que se encuentra disponible el fichero "pom.xml"
+## Installation
 
-Ejecutar el siguiente comando
+Steps to follow 
+
+* Start a terminal
+* To be located in the PATH of installation (the place where the project is located)
+* Verify that the file "pom.xml" is available
+
+Execute the following command
 
 ```bash
 mvn clean install
 ```
 
-El resultado será la generación de un artefacto en tu repositorio maven
+The result will be the generation of an artifact in your Maven repository (local)
 
 
 
 
 
-## Testing
+## Deploy
 
-Este proyecto NO dispone de test
-
-
-
-
-
-## Despliegue
-
-No aplica
+N/A
 
 
 
 
 
-## Versionado
+## Use
 
-**Nota :** Se utiliza [SemVer](http://semver.org/) para el versionado. 
-Para ver las versiones disponibles acceder a los tags del repositorio
-
+N/A
 
 
 
 
-## Autores
+
+## Versioning
+
+**Note :** [SemVer](http://semver.org/) is used for the versioning. 
+To see the available versions access the repository tags
+
+
+
+
+
+## Authors
 
 * **Víctor Madrid**
