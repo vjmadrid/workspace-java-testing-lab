@@ -25,16 +25,20 @@ public class NeverInvocationsVerifyTest {
 	}
 	
 	@Test
-	public void shouldCheckVerifyNeverInvocations() {
-		List<String> secondMockedList = mock(List.class);
-		
+	public void shouldCheckVerifyInvocations() {
+
 		mockedList.add("test");
 	
 		verify(mockedList).add("test");
-		 
 		verify(mockedList, never()).add("other test");
-		 
+	}
+	
+	@Test
+	public void shouldCheckVerifyNeverInvocations() {
+		List<String> secondMockedList = mock(List.class);
+		
 		verifyZeroInteractions(secondMockedList);
+		verify(secondMockedList, never()).add("never called");
 	}
 	
 }

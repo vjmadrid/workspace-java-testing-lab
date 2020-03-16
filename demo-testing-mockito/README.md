@@ -1,61 +1,97 @@
 # demo-testing-mockito
 
-Este proyecto representa a una serie de ejemplos sobre el uso y configuración de **Mockito**
+This project represents a collection of examples to explain the use and configuration of **Mockito**
 
 
-## Stack Tecnológico
+
+
+
+## Technological Stack
 
 * Java 8
-* [Maven 3](https://maven.apache.org/) - Gestión de dependencias
+* [Maven 3](https://maven.apache.org/) - Dependency Management
 
-Dependencias con proyectos de arquitectura
+Dependencies with architecture projects
 
-* **architecture-testing** [1.0.0-SNAPSHOT] : Librería de arquitectura para testing utilizada en el ámbito de test
+* If you consider using this option, uncomment the POM reference or use your own reference
 
-Dependencias terceros
+Third Party Dependencies
 
-* **commons-lang3** [3.8.1] : Framework de utilidades para las clases
+* **commons-lang3** [3.9] : class utilities
+* **commons-collections4** [4.4] : collection utilities
+* **commons-io** [2.6] : class utilities for : file, streams, file comparator, file filters, ...
 
-## Prerrequisitos
-
-Se definen que elementos se necesitan para instalar el software
-
-* Tener instalado Java 8 (Se requiere versión 1.5+)
-* Tener instalado Maven (Se aconseja que sea 3+)
+* **mockito** [3.3.3] :mocking framework
+* **junit** [4.13] : unity test framework
 
 
-### Instalación
 
-Pasos a seguir 
 
-* Arrancar la consola
-* Situarse en el PATH de instalación (el lugar donde se encuentra el proyecto)
-* Verificar que se encuentra disponible el fichero "pom.xml"
 
-Ejecutar el siguiente comando
+## Prerequisites
+
+Define what elements are needed to install the software
+
+* Java 8 installed (1.5+ version required)
+* Maven installed  (3+)
+
+
+
+
+
+## Installation
+
+Steps to follow 
+
+* Start a terminal
+* To be located in the PATH of installation (the place where the project is located)
+* Verify that the file "pom.xml" is available
+
+Execute the following command
 
 ```bash
 mvn clean install
 ```
 
-El resultado será la generación de un artefacto en tu repositorio maven
+The result will be the generation of an artifact in your Maven repository (local)
+
+
+
 
 
 ## Testing
 
-Este proyecto NO dispone de test
 
 
-## Despliegue
-
-No aplica
 
 
-## Versionado
 
-**Nota :** Se utiliza [SemVer](http://semver.org/) para el versionado. 
-Para ver las versiones disponibles acceder a los tags del repositorio
 
-## Autores
+## Deploy
+
+N/A
+
+
+
+
+
+## Use
+
+N/A
+
+
+
+
+
+## Versioning
+
+**Note :** [SemVer](http://semver.org/) is used for the versioning. 
+To see the available versions access the repository tags
+
+
+
+
+
+## Authors
 
 * **Víctor Madrid**

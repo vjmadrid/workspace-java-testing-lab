@@ -6,20 +6,23 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
-import static org.mockito.MockitoAnnotations.initMocks;
 
-
-public class AnnotationBehaviorVerifyTest {
+public class MockitoRuleWithVerifyTest {
 
 	@Mock
 	private List<String> mockedList;
+	
+	@Rule 
+	public MockitoRule mockitoRule = MockitoJUnit.rule(); // Create mocks based on the @Mock annotation
 
 	@Before
 	public void setUp() {
-		initMocks(this);
 	}
 
 	@After

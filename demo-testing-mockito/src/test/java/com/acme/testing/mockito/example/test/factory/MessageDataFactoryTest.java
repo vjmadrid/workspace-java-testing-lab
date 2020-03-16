@@ -1,4 +1,4 @@
-package com.acme.testing.mockito.factory;
+package com.acme.testing.mockito.example.test.factory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

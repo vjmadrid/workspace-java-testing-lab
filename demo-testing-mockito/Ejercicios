@@ -1,13 +1,18 @@
 
+Nota : No se puede probar metodos staticos o métodos privados
+* Usar PowerMock para métodos mocking staticos
+
 *******************************************
   Ejercicios basicos
 *******************************************
 
 	1.	StubbingTest : Test que muestra diferentes tipos de comportamientos de los mocks
 	
-	2.	BehaviorVerifyTest : Test verificar el comportamiento de una lista con las siguientes acciones
+	2.	StaticMockWithVerifyTest : Test verificar el comportamiento de una lista con las siguientes acciones
 			add("test");
 			clear();
+			
+		Nota : Se usa la implementacion con el método static mock()	
 			
 	3.	NeverInvocationsVerifyTest : Test que verifica que no se ha realizado una accion concreta con un objeto
 		y niguna acción sobre otro
@@ -21,14 +26,24 @@
 	
 	6.	RedundantInvocationsVerifyTest : Test que verifica que no se roduce una excepcion especifica al hacer comprobaciones
 		
-	7. 	AnnotationBehaviorVerifyTest : Test que hace uso de anotaciones	
+	7. 	AnnotationMockWithVerifyTest : Test que hace uso de anotaciones	 para verificar verificar el comportamiento de una lista con las siguientes acciones
 			@Mock
 			
 			initMocks(this);
+			
+			add("test");
+			clear();
 	
 	8. 	RunnerBehaviorVerifyTest : Test que muestra el uso de un runner en concreto
 	
-	9.	ArgumentMatchersTest : Test que muestra el uso de generaizacion en los matcher
+	9.	MockitoRuleWithVerifyTest : Test que hace uso de anotaciones para verificar verificar el comportamiento de una lista con las siguientes acciones
+			@Rule 
+			public MockitoRule mockitoRule = MockitoJUnit.rule();
+			
+			add("test");
+			clear();
+	
+	10.	ArgumentMatchersTest : Test que muestra el uso de la generalización en los matchers
 	
 			when(mockedList.get(anyInt())).thenReturn("test");
 	
@@ -36,7 +51,10 @@
 			String otherValue = mockedList.get(99);
 	
 	
-	10. ArgumentCaptorTest : Test que muesra la captura de arguentos
+	11. ArgumentCaptorTest : Test que muestra la captura de argumentos
+	
+	12. SpyTest : Test que muestra el uso de un Spy
+		
 		
 *******************************************
  Ejercicios Proyectos Reales

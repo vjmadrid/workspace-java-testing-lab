@@ -1,7 +1,7 @@
 package com.acme.example.junit.hamcrest.matcher.custom;
 
 import static com.acme.example.hamcrest.matcher.HasEqualsIdMatcher.hasEqualsId;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import static org.hamcrest.Matchers.not;
 

@@ -3,7 +3,7 @@ package com.acme.example.junit.hamcrest.matcher.core;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.anything;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.After;
 import org.junit.Before;

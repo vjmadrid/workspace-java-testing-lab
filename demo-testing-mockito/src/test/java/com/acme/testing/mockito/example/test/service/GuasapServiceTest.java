@@ -1,4 +1,4 @@
-package com.acme.testing.mockito.service;
+package com.acme.testing.mockito.example.test.service;
 
 import static org.mockito.Matchers.anyLong;
 import static org.mockito.Mockito.verify;

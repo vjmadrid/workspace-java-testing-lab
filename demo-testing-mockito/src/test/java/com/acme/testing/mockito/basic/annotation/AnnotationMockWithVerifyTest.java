@@ -1,6 +1,5 @@
-package com.acme.testing.mockito.basic.verify;
+package com.acme.testing.mockito.basic.annotation;
 
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 import java.util.List;
@@ -8,14 +7,19 @@ import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 
-public class BehaviorVerifyTest {
+import static org.mockito.MockitoAnnotations.initMocks;
 
+
+public class AnnotationMockWithVerifyTest {
+
+	@Mock
 	private List<String> mockedList;
 
 	@Before
 	public void setUp() {
-		mockedList = mock(List.class);
+		initMocks(this);
 	}
 
 	@After

@@ -1,4 +1,4 @@
-package com.acme.testing.mockito.entity;
+package com.acme.testing.mockito.example.test.entity;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;

@@ -11,9 +11,17 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
+	
+		<!-- Compiler & Resources -->
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
+		<!-- Dependency Versions -->
+		<hamcrest.version>2.2</hamcrest.version>
+		<mockito.version>3.3.3</mockito.version>
+		<junit.version>4.13</junit.version>
+		
+		<!-- Plugins -->
 		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
 	</properties>
@@ -22,22 +30,72 @@
 
 		<!-- *** Architecture Libraries *** -->
 
-		<!-- Modules -->
+		<!-- *** Architecture Libraries *** -->
+
+		<!-- Use Testing Architecture Library o specific junit version 4.x -->
+		
+		<!-- 
 		<dependency>
 			<groupId>com.acme.architecture.testing</groupId>
 			<artifactId>architecture-testing</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-			<!-- <scope>test</scope> Comment for use in src/  -->
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>test</scope>
 		</dependency>
+		 -->
 
-		<!-- *** Third Party Libraries *** -->
+  		<!-- *** Third Party Libraries *** -->
 		
-  		<!-- commons-lang : class utilities -->
+  		<!-- commons-lang3 : class utilities -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.8.1</version>
+			<version>3.9</version>
 		</dependency>
+		
+		<!-- commons-collections4 : collection utilities -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-collections4</artifactId>
+		    <version>4.4</version>
+		</dependency>
+		
+		<!-- commons-io : class utilities for : file, streams, file comparator, file filters, ... -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+		
+		<!-- hamcrest-core : matcher framework  -->
+		<dependency>
+		    <groupId>org.hamcrest</groupId>
+		    <artifactId>hamcrest</artifactId>
+			<version>${hamcrest.version}</version>
+		</dependency>
+		
+		<!-- 
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-library</artifactId>
+			<version>${hamcrest.version}</version> 
+		</dependency>
+		-->
+		
+		<!-- mockito : mocking framework -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${mockito.version}</version>
+		</dependency>
+		
+		<!-- junit : unit test framework -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+		
+		
 		
 	</dependencies>
 

@@ -1,4 +1,4 @@
-package com.acme.testing.mockito.basic.stub;
+package com.acme.testing.mockito.basic;
 
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
@@ -71,12 +71,27 @@ public class StubbingTest {
 		mockedList.get(1);
 	}
 	
+
+	
 	@Test (expected=RuntimeException.class)
 	public void shouldVerifyStubbingDoThrowExceptionReturn() {
 		//Stubbing		
 		doThrow(new RuntimeException()).when(mockedList).get(1); 
 
 		mockedList.get(1);
+	}
+	
+	@Test
+	public void shouldVerifyStubbingOneValueReturnWithdoReturnWhen() {
+		//Stubbing similar to when().ThenReturn()
+		// * used in mocking methods which give an exception during a call 
+		// * used with spy
+		doReturn("test").when(mockedList).get(0);
+	
+		String value = mockedList.get(0);
+		
+		verify(mockedList).get(0);
+		assertEquals("test", value );
 	}
 
 
