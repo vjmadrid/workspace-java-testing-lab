@@ -1,8 +1,8 @@
 package com.acme.testing.mockito.basic.matcher;
 
-import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.anyInt;
 
 import java.util.List;
 

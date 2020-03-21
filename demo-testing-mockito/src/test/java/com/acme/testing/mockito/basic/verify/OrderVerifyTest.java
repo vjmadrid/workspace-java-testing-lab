@@ -1,7 +1,7 @@
 package com.acme.testing.mockito.basic.verify;
 
-import static org.mockito.Mockito.*;
-import static org.junit.Assert.*;
+import static org.mockito.Mockito.inOrder;
+import static org.mockito.Mockito.mock;
 
 import java.util.List;
 
@@ -27,12 +27,16 @@ public class OrderVerifyTest {
 	public void shouldCheckOrderVerify() {
 		List<String> secondMockedList = mock(List.class);
 		
+		mockedList.add("two");
 		mockedList.add("first");
+		
 		secondMockedList.add("second");
 		 
 		InOrder inOrder = inOrder(mockedList, secondMockedList);
-		 
+		
+		inOrder.verify(mockedList).add("two");
 		inOrder.verify(mockedList).add("first");
+		
 		inOrder.verify(secondMockedList).add("second");
 	}
 	

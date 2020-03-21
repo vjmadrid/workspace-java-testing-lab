@@ -1,6 +1,6 @@
-# demo-testing-hamcrest
+# demo-testing-assertj
 
-This project represents a collection of examples to explain the use and configuration of **Hamcrest**
+This project represents a collection of examples to explain the use and configuration of **AssertJ**
 
 
 
@@ -21,7 +21,7 @@ Third Party Dependencies
 * **commons-collections4** [4.4] : collection utilities
 * **commons-io** [2.6] : class utilities for : file, streams, file comparator, file filters, ...
 
-* **hamcrest** [2.2] : matcher framework
+* **assertj-core** [3.11.1] : matching / asserts framework
 * **mockito** [3.3.3] : mocking framework
 * **junit** [4.13] : unity test framework
 

@@ -42,6 +42,7 @@ public class NumberInvocationsVerifyTest {
 	@Test
 	public void shouldCheckNumberInvocationsVerify() {
 		verify(mockedList).add("once time");
+		
 		verify(mockedList, times(1)).add("once time");
 
 		verify(mockedList, times(2)).add("twice times");
