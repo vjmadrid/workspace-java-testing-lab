@@ -41,7 +41,7 @@ Define what elements are needed to install the software
 
 ## Installation
 
-Steps to follow 
+Steps to follow
 
 * Start a terminal
 * To be located in the PATH of installation (the place where the project is located)
@@ -85,7 +85,7 @@ N/A
 
 ## Versioning
 
-**Note :** [SemVer](http://semver.org/) is used for the versioning. 
+**Note :** [SemVer](http://semver.org/) is used for the versioning.
 To see the available versions access the repository tags
 
 

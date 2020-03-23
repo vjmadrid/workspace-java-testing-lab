@@ -51,7 +51,7 @@ Define what elements are needed to install the software
 
 ## Installation
 
-Steps to follow 
+Steps to follow
 
 * Start a terminal
 * To be located in the PATH of installation (the place where the project is located)
