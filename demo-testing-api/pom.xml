@@ -31,7 +31,7 @@
 
 		<!-- API -->
 		<swagger.version>2.9.2</swagger.version>
-
+		<!-- <rest-assured.version>4.3.0</rest-assured.version> -->
 		<!-- Verifier -->
 		<verifier.verification.file>src/test/verifier/verifications-test.xml</verifier.verification.file>
 
@@ -93,11 +93,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
 		</dependency>
 
 		<!-- To reload the code when changes made -->
@@ -159,26 +169,8 @@
 				</configuration>
 			</plugin>
 
-			<!-- maven-verifier-plugin : Plugin used to verify the existence of files and directories -->
-			<plugin>
-				<artifactId>maven-verifier-plugin</artifactId>
-				<version>1.1</version>
-				<configuration>
-					<verificationFile>${verifier.verification.file}</verificationFile>
-					<failOnError>true</failOnError>
-				</configuration>
-				<executions>
-					<execution>
-						<id>main</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>verify</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<!-- maven-surefire-plugin : Plugin used to run unit tests - Generate reports in the directory target/surefire-reports -->
+			<!-- maven-surefire-plugin : Plugin used to run unit tests - Generate 
+				reports in the directory target/surefire-reports -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
