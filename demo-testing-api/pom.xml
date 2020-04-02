@@ -31,7 +31,9 @@
 
 		<!-- API -->
 		<swagger.version>2.9.2</swagger.version>
+		<wiremock.version>2.26.3</wiremock.version>
 		<!-- <rest-assured.version>4.3.0</rest-assured.version> -->
+		
 		<!-- Verifier -->
 		<verifier.verification.file>src/test/verifier/verifications-test.xml</verifier.verification.file>
 
@@ -109,6 +111,13 @@
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 		</dependency>
+		
+		 <dependency>
+            <groupId>com.github.tomakehurst</groupId>
+            <artifactId>wiremock-jre8</artifactId>
+            <version>${wiremock.version}</version>
+            <scope>test</scope>
+        </dependency>
 
 		<!-- To reload the code when changes made -->
 		<dependency>

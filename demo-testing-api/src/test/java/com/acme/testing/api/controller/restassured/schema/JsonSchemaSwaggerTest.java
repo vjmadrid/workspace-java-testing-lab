@@ -13,13 +13,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
-@Ignore
+//@Ignore
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class JsonSchemaSwaggerTest {
 	
 	private static final String API_PATH_JSON_SWAGGER = "/v2/api-docs";
-	private static final String PATH_SCHEMA_VALIDATOR = "/schema/schema-json-v2-api-docs.json";
+	private static final String PATH_SCHEMA_VALIDATOR = "schema-json-v2-api-docs.json";
 	
 	@LocalServerPort
 	private int port;
