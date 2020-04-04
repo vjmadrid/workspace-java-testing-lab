@@ -44,12 +44,14 @@ public class GreetingRestControllerWireMockTest {
 
 	@Before
 	public void setUp() throws Exception {
-		int port = wireMockRule.port();
+		System.out.println("*** SET UP ***");
 		
 		int port = APITestUtil.getAvailablePort();
-		
-		
+		//int port = wireMockRule.port();
 		int httpsPort = wireMockRule.httpsPort();
+		
+		System.out.println(" - port :: "+port);
+		System.out.println(" - httpsPort :: "+port);
 
         wireMockServer = new WireMockServer(port);
         wireMockServer.start();
