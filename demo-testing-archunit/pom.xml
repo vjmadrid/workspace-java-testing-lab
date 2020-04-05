@@ -22,22 +22,27 @@
 		<mockito.version>3.3.3</mockito.version>
 		<junit.version>4.13</junit.version>
 		<archunit.version>0.13.1</archunit.version>
-
+		
 		<!-- Plugins -->
 		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 	</properties>
 
 	<dependencies>
 
 		<!-- *** Architecture Libraries *** -->
 
-		<!-- *** Architecture Libraries *** -->
-
 		<!-- Use Testing Architecture Library o specific junit version 4.x -->
 
-		<!-- <dependency> <groupId>com.acme.architecture.testing</groupId> <artifactId>architecture-testing</artifactId> 
-			<version>0.0.1-SNAPSHOT</version> <scope>test</scope> </dependency> -->
+		<!-- 
+		<dependency>
+			<groupId>com.acme.architecture.testing</groupId>
+			<artifactId>architecture-testing</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
+		-->
 
 		<!-- *** Third Party Libraries *** -->
 
@@ -55,8 +60,7 @@
 			<version>4.4</version>
 		</dependency>
 
-		<!-- commons-io : class utilities for : file, streams, file comparator, 
-			file filters, ... -->
+		<!-- commons-io : class utilities for : file, streams, file comparator, file filters, ... -->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
@@ -122,7 +126,7 @@
 		<finalName>demo-testing-archunit</finalName>
 		<plugins>
 
-			<!-- Plugin used to compile the project source -->
+			<!-- maven-compiler-plugin : Plugin used to compile the project source -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -134,7 +138,7 @@
 				</configuration>
 			</plugin>
 
-			<!-- Plugin used to handle the project resources -->
+			<!-- maven-resources-plugin : Plugin used to handle the project resources -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -146,5 +150,5 @@
 
 		</plugins>
 	</build>
-
+	
 </project>

@@ -4,33 +4,33 @@
 
 	<groupId>com.acme.testing.junit</groupId>
 	<artifactId>demo-testing-junit</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>demo-testing-junit</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
-	
+
 		<!-- Compiler & Resources -->
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
+
 		<!-- Dependency Versions -->
 		<junit.version>4.13</junit.version>
-		
+
 		<!-- Plugins -->
 		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
 		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 	</properties>
-	
+
 	<dependencies>
 
 		<!-- *** Architecture Libraries *** -->
 
 		<!-- Use Testing Architecture Library o specific junit version 4.x -->
-		
+
 		<!-- 
 		<dependency>
 			<groupId>com.acme.architecture.testing</groupId>
@@ -38,7 +38,7 @@
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
-		 -->
+		-->
 
 		<!-- *** Third Party Libraries *** -->
 
@@ -51,25 +51,25 @@
 		
 		<!-- commons-collections4 : collection utilities -->
 		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-collections4</artifactId>
-		    <version>4.4</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.4</version>
 		</dependency>
-		
+
 		<!-- commons-io : class utilities for : file, streams, file comparator, file filters, ... -->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
 		</dependency>
-		
+
 		<!-- junit : unit test framework -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 		</dependency>
-
+		
 	</dependencies>
 
 	<build>
@@ -104,7 +104,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven-surefire-plugin.version}</version>
 				<configuration>
-				
+
 					<includes>
 						<include>**/Test*.java</include>
 						<include>**/*Test.java</include>
@@ -125,5 +125,5 @@
 
 		</plugins>
 	</build>
-
+	
 </project>

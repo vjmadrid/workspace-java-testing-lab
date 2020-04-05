@@ -12,7 +12,9 @@ import com.tngtech.archunit.junit.ArchUnitRunner;
 public class AssertGlobalGroupingArchitectureTest {
 	
 	@ArchTest
-	public static final ArchRules global_architecture = ArchRules.in(AssertEntityArchitectureTest.class);
+	public static final ArchRules entity_architecture = ArchRules.in(AssertEntityArchitectureTest.class);
 	
+	@ArchTest
+	public static final ArchRules utility_architecture = ArchRules.in(AssertUtilityArchitectureTest.class);
 	
 }

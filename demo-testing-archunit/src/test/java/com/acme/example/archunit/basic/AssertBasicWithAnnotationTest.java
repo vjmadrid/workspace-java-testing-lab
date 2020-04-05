@@ -11,7 +11,7 @@ import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.junit.ArchUnitRunner;
 import com.tngtech.archunit.lang.ArchRule;
 
-@RunWith(ArchUnitRunner.class)
+@RunWith(ArchUnitRunner.class) //Only for JUnit 4 , not needed JUnit5
 @AnalyzeClasses(packages = "com.acme.example.archunit")
 public class AssertBasicWithAnnotationTest {
 	

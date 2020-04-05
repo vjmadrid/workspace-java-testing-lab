@@ -11,7 +11,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-	
+
 		<!-- Compiler & Resources -->
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,11 +39,11 @@
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
-		 -->
+		-->
 
 		<!-- *** Third Party Libraries *** -->
 		
-  		<!-- commons-lang3 : class utilities -->
+		<!-- commons-lang3 : class utilities -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -52,9 +52,9 @@
 		
 		<!-- commons-collections4 : collection utilities -->
 		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-collections4</artifactId>
-		    <version>4.4</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.4</version>
 		</dependency>
 		
 		<!-- commons-io : class utilities for : file, streams, file comparator, file filters, ... -->
@@ -96,8 +96,7 @@
 				</configuration>
 			</plugin>
 
-			<!-- maven-surefire-plugin : Plugin used to run unit tests - Generate 
-				reports in the directory target/surefire-reports -->
+			<!-- maven-resources-plugin : Plugin used to handle the project resources -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -106,7 +105,7 @@
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
-
+			
 		</plugins>
 	</build>
 
