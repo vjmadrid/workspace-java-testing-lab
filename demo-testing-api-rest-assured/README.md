@@ -1,4 +1,4 @@
-# demo-testing-api
+# demo-testing-api-rest-assured
 
 This project represents a basic API REST with **Hello World (Greeting)**
 
@@ -18,27 +18,18 @@ This projects stands out for:
 * Provide **Verify Files / Content with Verifier**
 * Provide **Standard Surefire Test Filter with Profiles** (unit & integration test)
 * Provide **Code Coverage with JACOCO**
-* Provide **Java-based API test** with Spring Support
-    * Mockito.spy
-    * MockMvc + MockMvcResult with : @SpringBootTest and @WebMvcTest
-    * JsonPath
-    * JsonAssert
-    * TestRestTemplate
-    * @RestClientTest
-    * MockRestServiceServer : test and mock HTTP Response
+
+* Provide **Java-based API test** with Rest Assured
+* Provide **Scheme Validator** (use Rest Assured -> json-schema-validator)
 
 
-IMPORTANT : 
+For generate a sample schema to test use you Json example in a Online generator tool 
 
-Use **@RunWith(SpringRunner.class)** for registers Spring JUnit 4 integration
-Use **@ExtendWith(SpringExtension.class)** for registers Spring JUnit 5 integration
+[Schema Converter](https://www.liquid-technologies.com/online-json-to-schema-converter)
 
-Change imports : @Test , @Before -> @BeforeEach, ....
-
-
-Help with Dummy API
-
-https://reqres.in/ 
+* Generate JSON With Swagger Support : http://localhost:8091/v2/api-docs
+* Generate File with JSON
+* Generate Schema 
 
 
 
@@ -50,7 +41,6 @@ https://reqres.in/
 * [Maven 3](https://maven.apache.org/) - Dependency Management
 * [Spring Boot](https://spring.io/projects/spring-boot)
 * [Spring](https://spring.io)
-* [Docker](https://www.docker.com/) - Container Technology
 
 Dependencies with architecture projects
 
@@ -65,11 +55,11 @@ Third Party Dependencies
 * **spring-boot-devtools** [X] : Spring Boot Dev tools Library
 * **spring-boot-starter-actuator** [X] : Spring Boot Actuators Library
 
+* **rest-assured** [X] : Java-based API Testing Framework
+* **json-schema-validator** [X] : Schema Json Support Validator Rest Assured
+
 * **springfox-swagger2** [2.9.2] : Swagger
 * **springfox-swagger-ui** [2.9.2] : Swagger UI
-
-
-
 
 
 
@@ -80,72 +70,12 @@ Define what elements are needed to install the software
 
 * Java 8 installed (1.5+ version required)
 * Maven installed  (3+)
-* Docker installed (19+)
 
 
 
 
 
 ## Installation
-
-### Inspect
-
-Optional : Inspect all transitive dependencies coming *-starter
-
-```bash
-mvn dependency:tree
-```
-
-Result for spring-boot-starter-test
-
-```bash
-+- org.springframework.boot:spring-boot-starter-test:jar:2.2.0.RELEASE:test
-[INFO] |  +- org.springframework.boot:spring-boot-starter:jar:2.2.0.RELEASE:compile
-[INFO] |  |  +- org.springframework.boot:spring-boot-starter-logging:jar:2.2.0.RELEASE:compile
-[INFO] |  |  |  +- ch.qos.logback:logback-classic:jar:1.2.3:compile
-[INFO] |  |  |  |  \- ch.qos.logback:logback-core:jar:1.2.3:compile
-[INFO] |  |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.12.1:compile
-[INFO] |  |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.12.1:compile
-[INFO] |  |  |  \- org.slf4j:jul-to-slf4j:jar:1.7.28:compile
-[INFO] |  |  +- jakarta.annotation:jakarta.annotation-api:jar:1.3.5:compile
-[INFO] |  |  \- org.yaml:snakeyaml:jar:1.25:runtime
-[INFO] |  +- org.springframework.boot:spring-boot-test:jar:2.2.0.RELEASE:test
-[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:2.2.0.RELEASE:test
-[INFO] |  +- com.jayway.jsonpath:json-path:jar:2.4.0:test
-[INFO] |  |  \- net.minidev:json-smart:jar:2.3:test
-[INFO] |  |     \- net.minidev:accessors-smart:jar:1.2:test
-[INFO] |  |        \- org.ow2.asm:asm:jar:5.0.4:test
-[INFO] |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.2:test
-[INFO] |  |  \- jakarta.activation:jakarta.activation-api:jar:1.2.1:test
-[INFO] |  +- org.junit.jupiter:junit-jupiter:jar:5.5.2:test
-[INFO] |  |  +- org.junit.jupiter:junit-jupiter-api:jar:5.5.2:test
-[INFO] |  |  |  +- org.opentest4j:opentest4j:jar:1.2.0:test
-[INFO] |  |  |  \- org.junit.platform:junit-platform-commons:jar:1.5.2:test
-[INFO] |  |  +- org.junit.jupiter:junit-jupiter-params:jar:5.5.2:test
-[INFO] |  |  \- org.junit.jupiter:junit-jupiter-engine:jar:5.5.2:test
-[INFO] |  +- org.junit.vintage:junit-vintage-engine:jar:5.5.2:test
-[INFO] |  |  +- org.apiguardian:apiguardian-api:jar:1.1.0:test
-[INFO] |  |  +- org.junit.platform:junit-platform-engine:jar:1.5.2:test
-[INFO] |  |  \- junit:junit:jar:4.12:test
-[INFO] |  +- org.mockito:mockito-junit-jupiter:jar:3.1.0:test
-[INFO] |  +- org.assertj:assertj-core:jar:3.13.2:test
-[INFO] |  +- org.hamcrest:hamcrest:jar:2.1:test
-[INFO] |  +- org.mockito:mockito-core:jar:3.1.0:test
-[INFO] |  |  +- net.bytebuddy:byte-buddy:jar:1.10.1:compile
-[INFO] |  |  +- net.bytebuddy:byte-buddy-agent:jar:1.10.1:test
-[INFO] |  |  \- org.objenesis:objenesis:jar:2.6:test
-[INFO] |  +- org.skyscreamer:jsonassert:jar:1.5.0:test
-[INFO] |  |  \- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test
-[INFO] |  +- org.springframework:spring-core:jar:5.2.0.RELEASE:compile
-[INFO] |  |  \- org.springframework:spring-jcl:jar:5.2.0.RELEASE:compile
-[INFO] |  +- org.springframework:spring-test:jar:5.2.0.RELEASE:test
-[INFO] |  \- org.xmlunit:xmlunit-core:jar:2.6.3:test
-```
-
-Important : Spring Boot use specific versions
-
-
-### Execution
 
 Steps to follow
 
@@ -232,7 +162,7 @@ mvn package -P<id_profile>
 Execute
 
 ```bash
-java -jar target/demo-testing-api-0.0.1-SNAPSHOT.jar
+java -jar target/demo-testing-api-rest-assured-0.0.1-SNAPSHOT.jar
 ```
 
 Use default environment -> dev or <id_profile> environment
@@ -324,42 +254,6 @@ Launching swagger UI swagger-ui.html
 
 ```bash
 http://localhost:8091/swagger-ui.html
-```
-
-
-
-
-
-## Dockerize
-
-Dockerize (Spring Boot + Docker)
-
-1. Execute the following command
-
-```bash
-mvn clean install -P<id_profile>
-```
-
-2. Verify exist target/<artifact> -> JAR
-
-3. Execute the following command
-
-Create a Docker image File
-
-```bash
-docker build -t acme/demo-testing-api .
-```
-
-* Copy the generated JAR
-
-4. Verify exist image created
-
-5. Execute the following command
-
-Create a Docker container
-
-```bash
-docker run -p 8091:8091 -t acme/demo-testing-api
 ```
 
 

@@ -4,12 +4,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.acme.testing.api</groupId>
-	<artifactId>demo-testing-api</artifactId>
+	<groupId>com.acme.testing.api.cucumber</groupId>
+	<artifactId>demo-testing-api-cucumber</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>demo-testing-api</name>
+	<name>demo-testing-api-cucumber</name>
 	<description></description>
 
 	<parent>
@@ -28,9 +28,12 @@
 
 		<!-- Spring Boot Properties -->
 		<start-class>com.acme.testing.api.Application</start-class>
-		
+
 		<!-- API -->
 		<swagger.version>2.9.2</swagger.version>
+		<!-- <rest-assured.version>4.3.0</rest-assured.version> -->
+		<cucumber.version>5.6.0</cucumber.version>
+		<cucumber-reporting.version>5.0.0</cucumber-reporting.version>
 		
 		<!-- Verifier -->
 		<verifier.verification.file>src/test/verifier/verifications-test.xml</verifier.verification.file>
@@ -86,16 +89,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			
-			<!-- Exclude Support JUni4
-			<exclusions>
-		        <exclusion>
-		            <groupId>org.junit.vintage</groupId>
-		            <artifactId>junit-vintage-engine</artifactId>
-		        </exclusion>
-		    </exclusions>
-			 -->
-			
 		</dependency>
 
 		<dependency>
@@ -107,12 +100,41 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
+        
+        <dependency>
+		    <groupId>io.cucumber</groupId>
+		    <artifactId>cucumber-java</artifactId>
+		    <version>${cucumber.version}</version>
+		    <scope>test</scope>
+		</dependency>
+        
+        <dependency>
+		    <groupId>io.cucumber</groupId>
+		    <artifactId>cucumber-java8</artifactId>
+		    <version>${cucumber.version}</version>
+		    <scope>test</scope>
 		</dependency>
 		
+		<dependency>
+		  <groupId>io.cucumber</groupId>
+		  <artifactId>cucumber-spring</artifactId>
+		  <version>${cucumber.version}</version>
+		  <scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		  <groupId>io.cucumber</groupId>
+		  <artifactId>cucumber-junit</artifactId>
+		  <version>${cucumber.version}</version>
+		  <scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>net.masterthought</groupId>
+		    <artifactId>cucumber-reporting</artifactId>
+		    <version>${cucumber-reporting.version}</version>
+		</dependency>
+
 		<!-- To reload the code when changes made -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

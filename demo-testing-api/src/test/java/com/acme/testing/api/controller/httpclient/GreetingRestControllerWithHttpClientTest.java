@@ -29,8 +29,6 @@ import com.acme.testing.api.constant.GreetingRestApiConstant;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class GreetingRestControllerWithHttpClientTest {
 
-	private final String TEST_NAME_VALUE = "Acme";
-
 	@LocalServerPort
 	private int port;
 

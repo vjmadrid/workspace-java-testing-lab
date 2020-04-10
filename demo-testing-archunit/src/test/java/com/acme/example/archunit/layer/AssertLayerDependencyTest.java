@@ -8,70 +8,78 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.junit.runner.RunWith;
+import org.junit.Test;
 
-import com.acme.example.archunit.user.annotation.UtilDescription;
 import com.tngtech.archunit.core.domain.JavaClass;
+import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.domain.JavaModifier;
-import com.tngtech.archunit.junit.AnalyzeClasses;
-import com.tngtech.archunit.junit.ArchTest;
-import com.tngtech.archunit.junit.ArchUnitRunner;
+import com.tngtech.archunit.core.importer.ClassFileImporter;
+import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.lang.ArchCondition;
 import com.tngtech.archunit.lang.ArchRule;
 import com.tngtech.archunit.lang.ConditionEvents;
 import com.tngtech.archunit.lang.SimpleConditionEvent;
 
-@RunWith(ArchUnitRunner.class)
-@AnalyzeClasses(packages = "com.acme.example")
 public class AssertLayerDependencyTest {
-
-//	private JavaClasses myClasses = new ClassFileImporter()
-//		    .importPackages("com.khartec");
-//
-//	
-	@ArchTest
-	public static final ArchRule util_class_definition = classes().that().resideInAPackage("..user.info").and()
-			.areNotInterfaces().and().haveNameMatching(".*Util").should().beAnnotatedWith(UtilDescription.class);
-
-	private static final Class<?>[] SUPPORTED_RETURN_TYPES = new Class<?>[] { Collections.class, Map.class };
-
-	private static Set<Class<?>> VALID_TYPES_SET = new HashSet<>(Arrays.asList(SUPPORTED_RETURN_TYPES));
-
-	public void check(JavaClass item, ConditionEvents events) {
-		item.getMethods().stream().filter(method -> method.getName().startsWith("getNumeric"))
-				.filter(method -> method.getModifiers().contains(JavaModifier.PUBLIC)).forEach(method -> {
-					JavaClass returnType = method.getReturnType();
-					if (!any(VALID_TYPES_SET, vrt -> returnType.isAssignableTo(vrt))) {
-						String message = String.format(
-								"Method %s.%s does not return a collection or map. It returns: %s", item.getName(),
-								method.getName(), returnType.getName());
-						events.add(SimpleConditionEvent.violated(item, message));
-					}
-				});
-	}
-
 	
+	private JavaClasses CLASS_PACKAGE_FILTER = new ClassFileImporter().withImportOption(ImportOption.Predefined.DONT_INCLUDE_TESTS).importPackages("com.acme.example");
+	
+	public final Class<?>[] SUPPORTED_RETURN_TYPES = new Class<?>[] { Collections.class, Map.class };
+
+
 	ArchCondition<JavaClass> findMethodsMustReturnCollectionsOrMaps = new ArchCondition<JavaClass>("..desc..") {
+		
+		
+		
+		
+		
+		public void check(JavaClass clazz, ConditionEvents events) {
+			Set<Class<?>> VALID_TYPES_SET = new HashSet<>(Arrays.asList(SUPPORTED_RETURN_TYPES));
+			
+			clazz.getMethods().stream()
+				.filter(method -> method.getName().startsWith("getNumeric"))
+				.filter(method -> method.getModifiers().contains(JavaModifier.PUBLIC))
+				.forEach(method -> {
+					JavaClass returnType = method.getReturnType();
+					System.out.println("returnType :: " + returnType);
+				
+				
+//				
+//				if (!any(VALID_TYPES_SET, vrt -> returnType.isAssignableTo(vrt))) {
+//					String message = String.format(
+//						"Method %s.%s does not return a collection or map. It returns: %s", item.getName(),
+//						method.getName(), returnType.getName());
+//					events.add(SimpleConditionEvent.violated(item, message));
+//				}
+			});
+			
+		}
+		
+	};
 	
-	private JavaClasses myClassesAndJavaUtilClasses = 
-			   new ClassFileImporter()
-			       .importPackages("com.acme", "java.util");
 	
-
 	@Test
 	public void methodsPrefixedFindShouldReturnCollections() {
-		ArchRule rule = classes().that().areNotInterfaces().and().haveNameMatching(".*Dao")
-				.should(haveGetMethodsThatReturnCollectionsOrMaps);
+		//ArchRule rule = classes().that().resideInAPackage("..user.info").and()
+		//		.areNotInterfaces().and().haveNameMatching(".*Util").should().beAnnotatedWith(UtilDescription.class);
+		
+		ArchRule rule = classes().that().areNotInterfaces().and().haveNameMatching(".*Util")
+				.should(findMethodsMustReturnCollectionsOrMaps);
 
-		rule.check(myClassesAndJavaUtilClasses);
+		rule.check(CLASS_PACKAGE_FILTER);
 	}
+	
+}
 
 //	@ArchTest
-//	public static final ArchRule layer_dependencies_are_respected = layeredArchitecture()
-//	    .layer("Controller").definedBy("test.sdc.archunit.controller..")
-//	    .layer("Service").definedBy("test.sdc.archunit.service..")
-//	    .layer("Adapter").definedBy("test.sdc.archunit.adapter..")
-//	    .whereLayer("Controller").mayNotBeAccessedByAnyLayer()
-//	    .whereLayer("Service").mayOnlyBeAccessedByLayers("Controller", "Adapter")
-//	    .whereLayer("Adapter").mayNotBeAccessedByAnyLayer();
-}
+//	public static final 
+
+
+
+	
+		
+
+					
+
+
+
