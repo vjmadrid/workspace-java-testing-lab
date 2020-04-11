@@ -1,4 +1,4 @@
-# demo-testing-api
+# demo-testing-api-client
 
 This project represents a basic API REST with **Hello World (Greeting)**
 
@@ -25,8 +25,8 @@ This projects stands out for:
     * JsonAssert
     * TestRestTemplate
     * @RestClientTest
-    * MockRestServiceServer -> test and mock HTTP Response
-    * WebTestClient
+    * MockRestServiceServer : test and mock HTTP Response
+    * WebClient : Modern Alternative to RestTempale (support sync and asyn) -> require web flux
 
 
 IMPORTANT : 
@@ -35,6 +35,13 @@ Use **@RunWith(SpringRunner.class)** for registers Spring JUnit 4 integration
 Use **@ExtendWith(SpringExtension.class)** for registers Spring JUnit 5 integration
 
 Change imports : @Test , @Before -> @BeforeEach, ....
+
+
+Help with Dummy API
+
+https://reqres.in/
+https://jsonplaceholder.typicode.com/
+
 
 
 
@@ -59,8 +66,6 @@ Third Party Dependencies
 * **spring-boot-starter-web** [X] : Spring Boot web library
 * **spring-boot-devtools** [X] : Spring Boot Dev tools Library
 * **spring-boot-starter-actuator** [X] : Spring Boot Actuators Library
-* **spring-boot-starter-webflux** [X] : Spring Boot Web Client
-* **reactor-test** [X] : Test Web Client
 
 * **springfox-swagger2** [2.9.2] : Swagger
 * **springfox-swagger-ui** [2.9.2] : Swagger UI

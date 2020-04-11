@@ -24,7 +24,7 @@ import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
-public class GreetingRestControllerWireMockBasicTest {
+public class WireMockBasicTest {
 
 	private static WireMockServer wireMockServer;
 
