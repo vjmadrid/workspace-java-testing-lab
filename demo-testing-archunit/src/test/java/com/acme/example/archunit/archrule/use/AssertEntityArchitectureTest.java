@@ -1,6 +1,6 @@
 package com.acme.example.archunit.archrule.use;
 
-import com.acme.example.archunit.archrule.rule.EntityArchitectureRule;
+import com.acme.example.archunit.archrule.rule.BaseEntityArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
@@ -11,6 +11,6 @@ import com.tngtech.archunit.lang.ArchRule;
 public class AssertEntityArchitectureTest {
 	
 	@ArchTest
-	public static final ArchRule entity_classes_should_be_in_entity_package = EntityArchitectureRule.entity_classes_should_be_in_entity_package;
+	public static final ArchRule entity_classes_should_be_in_entity_package = BaseEntityArchitectureRule.entity_classes_should_be_in_entity_package;
 	
 }

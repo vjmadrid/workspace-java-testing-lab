@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 import org.junit.jupiter.api.Test;
 
+import com.acme.example.archunit.archrule.rule.BaseEntityArchitectureRule;
 import com.acme.example.archunit.util.ArchUnitUtil;
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
@@ -46,6 +47,18 @@ public class AssertMethodTest {
     public void shouldBeValid3() {
 		// Rule entities_impl_serializable
 		ArchRuleDefinition.classes().that().resideInAPackage("..archunit.entity").should().implement(Serializable.class).check(IMPORTED_CLASSES);
+    }
+	
+	@Test
+    public void shouldBeValid4() {
+		// Rule entities_impl_serializable
+        ArchRule rule = BaseEntityArchitectureRule.entity_classes_should_be_in_entity_package;
+
+        System.out.println("\n*** VALID :: "+rule+" ****");
+        
+        ArchUnitUtil.showInfo(IMPORTED_CLASSES);
+        
+        rule.check(IMPORTED_CLASSES);
     }
 	
 	

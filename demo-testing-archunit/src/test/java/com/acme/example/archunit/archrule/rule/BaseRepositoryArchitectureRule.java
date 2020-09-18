@@ -6,7 +6,7 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 import com.acme.example.archunit.constant.ArchUnitConstant;
 import com.tngtech.archunit.lang.ArchRule;
 
-public class RepositoryArchitectureRule {
+public class BaseRepositoryArchitectureRule {
 	
 	public static final ArchRule repository_classes_should_be_in_repository_package = 
 		    classes()

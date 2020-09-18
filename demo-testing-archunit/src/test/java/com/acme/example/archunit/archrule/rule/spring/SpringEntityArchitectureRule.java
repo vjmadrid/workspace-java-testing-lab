@@ -4,11 +4,11 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
 import org.springframework.stereotype.Component;
 
-import com.acme.example.archunit.archrule.rule.EntityArchitectureRule;
+import com.acme.example.archunit.archrule.rule.BaseEntityArchitectureRule;
 import com.acme.example.archunit.constant.ArchUnitConstant;
 import com.tngtech.archunit.lang.ArchRule;
 
-public class SpringEntityArchitectureRule extends EntityArchitectureRule{
+public class SpringEntityArchitectureRule extends BaseEntityArchitectureRule{
 	
 
 	public static final ArchRule spring_entity_classes_should_be_in_entity_package = 

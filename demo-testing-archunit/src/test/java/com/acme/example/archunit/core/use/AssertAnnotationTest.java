@@ -4,6 +4,7 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
 import java.io.Serializable;
 
+import com.acme.example.archunit.archrule.rule.BaseEntityArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
@@ -15,5 +16,8 @@ public class AssertAnnotationTest {
 	
 	@ArchTest
 	public static ArchRule shouldBeValid = classes().that().resideInAPackage("..archunit.entity").should().implement(Serializable.class);
+	
+	@ArchTest
+	public static ArchRule shouldBeValid2 = BaseEntityArchitectureRule.entity_classes_should_be_in_entity_package;
 	
 }

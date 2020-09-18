@@ -5,7 +5,7 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 import com.acme.example.archunit.constant.ArchUnitConstant;
 import com.tngtech.archunit.lang.ArchRule;
 
-public class ServiceArchRule {
+public class BaseServiceArchRule {
 	
 	public static final ArchRule service_classes_should_be_in_service_package = 
 		    classes()
