@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.acme.testing.api.util.APITestUtil;
 import com.jayway.jsonpath.JsonPath;
 
 /*

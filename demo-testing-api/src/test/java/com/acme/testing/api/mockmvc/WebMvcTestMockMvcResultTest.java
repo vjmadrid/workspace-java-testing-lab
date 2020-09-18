@@ -21,6 +21,8 @@ import com.acme.testing.api.constant.GreetingRestApiConstant;
 public class WebMvcTestMockMvcResultTest {
 
 	private final String TEST_NAME_VALUE = "Acme";
+	
+	private final String TEST_RESULT_CONTENT_VALUE = "Hello, Acme!";
 
 	@Autowired
 	private MockMvc mockMvc;
@@ -29,17 +31,17 @@ public class WebMvcTestMockMvcResultTest {
 	public void whenCallAGreetingWithResponseEntityWithParameter_thenReturnGreetingDefaultBody() throws Exception {
 		mockMvc.perform(get(GreetingRestApiConstant.MAPPING).param(GreetingRestApiConstant.MAPPING_NAME_PARAMETER,
 				TEST_NAME_VALUE)).andDo(print()).andExpect(status().isOk())
-				.andExpect(jsonPath("$.content").value("Hello, Acme!"));
+				.andExpect(jsonPath("$.content").value(TEST_RESULT_CONTENT_VALUE));
 	}
 	
 	@Test
 	public void whenCallAGreetingWithResponseEntityWithParameterWithMvcResult_thenReturnGreetingDefaultBody() throws Exception {
 		MvcResult result = mockMvc.perform(get(GreetingRestApiConstant.MAPPING).param(GreetingRestApiConstant.MAPPING_NAME_PARAMETER,
 				TEST_NAME_VALUE)).andDo(print()).andExpect(status().isOk())
-				.andExpect(jsonPath("$.content").value("Hello, Acme!")).andReturn();
+				.andExpect(jsonPath("$.content").value(TEST_RESULT_CONTENT_VALUE)).andReturn();
 		
 		//Option 1
-		assertEquals(Boolean.TRUE, result.getResponse().getContentAsString().contains("Hello, Acme!"));
+		assertEquals(Boolean.TRUE, result.getResponse().getContentAsString().contains(TEST_RESULT_CONTENT_VALUE));
 	}
 	
 }

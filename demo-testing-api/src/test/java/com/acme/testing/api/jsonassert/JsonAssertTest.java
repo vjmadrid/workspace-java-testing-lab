@@ -23,6 +23,7 @@ import com.jayway.jsonpath.JsonPath;
 public class JsonAssertTest {
 
 	private final String TEST_NAME_VALUE = "Acme";
+	
 	private final String TEST_RESULT_CONTENT_VALUE = "Hello, Acme!";
 
 	@Autowired
@@ -30,6 +31,7 @@ public class JsonAssertTest {
 
 	@Test
 	public void whenCallAGreetingWithResponseEntityWithParameterWithMvcResultAndJsonPath_thenReturnGreetingDefaultBody() throws Exception {
+		
 		MvcResult result = mockMvc.perform(get(GreetingRestApiConstant.MAPPING).param(GreetingRestApiConstant.MAPPING_NAME_PARAMETER,
 				TEST_NAME_VALUE)).andDo(print()).andExpect(status().isOk())
 				.andExpect(jsonPath("$.content").value(TEST_RESULT_CONTENT_VALUE)).andReturn();
@@ -43,6 +45,7 @@ public class JsonAssertTest {
 	
 	@Test
 	public void whenCallAGreetingWithResponseEntityWithParameterWithJsonAssert_thenReturnGreetingDefaultBody() throws Exception {
+		
 		MvcResult result = mockMvc.perform(get(GreetingRestApiConstant.MAPPING).param(GreetingRestApiConstant.MAPPING_NAME_PARAMETER,
 				TEST_NAME_VALUE)).andDo(print()).andExpect(status().isOk())
 				.andExpect(jsonPath("$.content").value(TEST_RESULT_CONTENT_VALUE)).andReturn();

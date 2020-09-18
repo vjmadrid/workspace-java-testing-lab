@@ -2,15 +2,13 @@ package com.acme.example.archunit.concept;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
-import org.junit.runner.RunWith;
-
+import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
-import com.tngtech.archunit.junit.ArchUnitRunner;
 import com.tngtech.archunit.lang.ArchRule;
 
-@RunWith(ArchUnitRunner.class)
-@AnalyzeClasses(packages = "com.acme.example.archunit")
+//@RunWith(ArchUnitRunner.class) //Only for JUnit 4 , not needed JUnit5
+@AnalyzeClasses(packages = "com.acme.example.archunit", importOptions = { ImportOption.DoNotIncludeTests.class, ImportOption.DoNotIncludeJars.class })
 public class AssertNamingConventionsTest {
 
 	private static final String FACTORY_SUFFIX = "Factory";

@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.tngtech.archunit.core.domain.JavaClass;
 import com.tngtech.archunit.core.domain.JavaClasses;
@@ -22,10 +22,15 @@ import com.tngtech.archunit.lang.SimpleConditionEvent;
 
 public class AssertLayerDependencyTest {
 	
-	private JavaClasses CLASS_PACKAGE_FILTER = new ClassFileImporter().withImportOption(ImportOption.Predefined.DONT_INCLUDE_TESTS).importPackages("com.acme.example");
+	private static final String GENERIC_PACKAGE_TEST_VALUE = "com.acme.example";
+
+	private JavaClasses IMPORTED_CLASSES = new ClassFileImporter()
+    		.withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
+    		.withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_ARCHIVES)
+    		.withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_JARS)
+    		.importPackages(GENERIC_PACKAGE_TEST_VALUE);
 	
 	public final Class<?>[] SUPPORTED_RETURN_TYPES = new Class<?>[] { Collections.class, Map.class };
-
 
 	ArchCondition<JavaClass> findMethodsMustReturnCollectionsOrMaps = new ArchCondition<JavaClass>("..desc..") {
 		
@@ -40,11 +45,9 @@ public class AssertLayerDependencyTest {
 				.filter(method -> method.getName().startsWith("getNumeric"))
 				.filter(method -> method.getModifiers().contains(JavaModifier.PUBLIC))
 				.forEach(method -> {
-					JavaClass returnType = method.getReturnType();
+					JavaClass returnType = method.getRawReturnType();
 					System.out.println("returnType :: " + returnType);
-				
-				
-//				
+						
 //				if (!any(VALID_TYPES_SET, vrt -> returnType.isAssignableTo(vrt))) {
 //					String message = String.format(
 //						"Method %s.%s does not return a collection or map. It returns: %s", item.getName(),
@@ -66,13 +69,10 @@ public class AssertLayerDependencyTest {
 		ArchRule rule = classes().that().areNotInterfaces().and().haveNameMatching(".*Util")
 				.should(findMethodsMustReturnCollectionsOrMaps);
 
-		rule.check(CLASS_PACKAGE_FILTER);
+		rule.check(IMPORTED_CLASSES);
 	}
 	
 }
-
-//	@ArchTest
-//	public static final 
 
 
 

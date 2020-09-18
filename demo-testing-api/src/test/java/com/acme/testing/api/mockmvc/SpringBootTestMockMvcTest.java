@@ -21,6 +21,8 @@ import com.acme.testing.api.constant.GreetingRestApiConstant;
 public class SpringBootTestMockMvcTest {
 
 	private final String TEST_NAME_VALUE = "Acme";
+	
+	private final String TEST_RESULT_CONTENT_VALUE = "Hello, Acme!";
 
 	@Autowired
 	private MockMvc mockMvc;
@@ -35,7 +37,7 @@ public class SpringBootTestMockMvcTest {
 	public void whenCallAGreetingDefaultWithParameter_thenReturnGreetingDefaultBody() throws Exception {
 		mockMvc.perform(get(GreetingRestApiConstant.MAPPING).param(GreetingRestApiConstant.MAPPING_NAME_PARAMETER,
 				TEST_NAME_VALUE)).andDo(print()).andExpect(status().isOk())
-				.andExpect(jsonPath("$.content").value("Hello, Acme!"));
+				.andExpect(jsonPath("$.content").value(TEST_RESULT_CONTENT_VALUE));
 	}
 
 	@Test
@@ -48,7 +50,7 @@ public class SpringBootTestMockMvcTest {
 	public void whenCallAGreetingWithVersionWithParameter_thenReturnGreetingDefaultBody() throws Exception {
 		mockMvc.perform(get(GreetingRestApiConstant.MAPPING_WITH_VERSION)
 				.param(GreetingRestApiConstant.MAPPING_NAME_PARAMETER, TEST_NAME_VALUE)).andDo(print())
-				.andExpect(status().isOk()).andExpect(jsonPath("$.content").value("Hello, Acme!"));
+				.andExpect(status().isOk()).andExpect(jsonPath("$.content").value(TEST_RESULT_CONTENT_VALUE));
 	}
 	
 	@Test
@@ -61,7 +63,7 @@ public class SpringBootTestMockMvcTest {
 	public void whenCallAGreetingWithResponseEntityWithParameter_thenReturnGreetingDefaultBody() throws Exception {
 		mockMvc.perform(get(GreetingRestApiConstant.MAPPING).param(GreetingRestApiConstant.MAPPING_NAME_PARAMETER,
 				TEST_NAME_VALUE)).andDo(print()).andExpect(status().isOk())
-				.andExpect(jsonPath("$.content").value("Hello, Acme!"));
+				.andExpect(jsonPath("$.content").value(TEST_RESULT_CONTENT_VALUE));
 	}
 	
 	

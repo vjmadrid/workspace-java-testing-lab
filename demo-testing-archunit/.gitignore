@@ -23,6 +23,9 @@
 .loadpath
 .recommenders
 .sts4-cache/
+.apt_generated/
+.apt_generated_tests/
+.factorypath/
 
 target/
 bin/
@@ -33,5 +36,4 @@ tmp/
 *.swp
 *~.nib
 local.properties
-/.apt_generated/
-/.apt_generated_tests/
+

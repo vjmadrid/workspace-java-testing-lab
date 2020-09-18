@@ -4,17 +4,16 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
 import java.io.Serializable;
 
-import org.junit.runner.RunWith;
-
 import com.acme.example.archunit.user.annotation.UserDescription;
 import com.acme.example.archunit.user.util.ListUtil;
+import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
-import com.tngtech.archunit.junit.ArchUnitRunner;
 import com.tngtech.archunit.lang.ArchRule;
 
-@RunWith(ArchUnitRunner.class)
-@AnalyzeClasses(packages = "com.acme.example.archunit.user.entity")
+
+//@RunWith(ArchUnitRunner.class) //Only for JUnit 4 , not needed JUnit5
+@AnalyzeClasses(packages = "com.acme.example.archunit.user.entity", importOptions = { ImportOption.DoNotIncludeTests.class, ImportOption.DoNotIncludeJars.class })
 public class AssertSomeClassesDefinitionAndStructureTest {
 
 	@ArchTest
