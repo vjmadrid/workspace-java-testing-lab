@@ -17,7 +17,7 @@ public class Example2ApplicationIT extends PostgreSQLContainerBase {
 	private TestRestTemplate testRestTemplate;
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 		ResponseEntity<JsonNode> result = testRestTemplate.getForEntity(UserMessageRestApiConstant.MAPPING,
 				JsonNode.class);
 

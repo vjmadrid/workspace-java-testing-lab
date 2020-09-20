@@ -17,9 +17,9 @@ Dependencies with architecture projects
 
 Third Party Dependencies
 
-* **commons-lang3** [3.9] : class utilities
+* **commons-lang3** [3.11] : class utilities
 * **commons-collections4** [4.4] : collection utilities
-* **commons-io** [2.6] : class utilities for : file, streams, file comparator, file filters, ...
+* **commons-io** [2.8.0] : class utilities for : file, streams, file comparator, file filters, ...
 
 * **junit** [4.13] :Unity test framework
 

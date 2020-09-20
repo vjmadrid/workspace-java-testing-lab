@@ -13,7 +13,7 @@ public class TestKitExampleTest {
         Events testEvents = EngineTestKit 
             .engine("junit-jupiter") 
             .selectors(selectClass(TestKitTemplateExample.class)) 
-            .execute() 
+            .execute()
             .tests(); 
 
         testEvents.assertStatistics(stats -> stats.skipped(1)); 

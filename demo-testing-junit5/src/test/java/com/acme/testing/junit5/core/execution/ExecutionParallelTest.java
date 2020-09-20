@@ -6,6 +6,8 @@ import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 
 @Execution(ExecutionMode.SAME_THREAD)
+//@Execution(ExecutionMode.CONCURRENT)
+//Other option surefire-plugin-configuration
 public class ExecutionParallelTest {
 
 	@Test

@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledOnOs;
 import org.junit.jupiter.api.condition.OS;
 
+import com.acme.testing.junit5.test.util.annotation.so.DisabledOnMidnight;
 import com.acme.testing.junit5.test.util.annotation.so.DisabledOnNixSystems;
 
 public class DisabledOnTest {
@@ -49,6 +50,15 @@ public class DisabledOnTest {
 	@DisabledOnNixSystems
 	public void shouldBeOneItemListDisabledOnNixSystems() {
 		System.out.println("[@Test] : shouldBeOneItemListDisabledOnNixSystems");
+		testList.add("element 1");
+		
+		assertEquals(1, testList.size());
+	}
+	
+	@Test
+	@DisabledOnMidnight
+	public void shouldBeOneItemListDisabledOnMidnight() {
+		System.out.println("[@Test] : shouldBeOneItemListDisabledOnMidnight");
 		testList.add("element 1");
 		
 		assertEquals(1, testList.size());

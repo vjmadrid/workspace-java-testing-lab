@@ -1,6 +1,6 @@
-# demo-testing-assertj
+# demo-testing-testcontainers
 
-This project represents a collection of examples to explain the use and configuration of **AssertJ**
+This project represents a collection of examples to explain the use and configuration of **Testcontainers**
 
 
 
@@ -17,13 +17,14 @@ Dependencies with architecture projects
 
 Third Party Dependencies
 
-* **commons-lang3** [3.9] : class utilities
-* **commons-collections4** [4.4] : collection utilities
-* **commons-io** [2.6] : class utilities for : file, streams, file comparator, file filters, ...
+* **spring-boot-starter-data-jpa** [Spring Boot Version] : Spring Boot Persistence Library
+* **spring-boot-starter-web** [Spring Boot Version] : Spring Boot web library
+* **spring-boot-starter-test** [Spring Boot Version] : Spring Boot testing library
 
-* **assertj-core** [3.11.1] : matching / asserts framework
-* **mockito** [3.3.3] : mocking framework
-* **junit** [4.13] : unity test framework
+
+* **h2** [Spring Boot Version] : H2 Database Engine
+* **flyway-core** [Spring Boot Version] : Database version control
+* **postgresql** [Spring Boot Version] : Postgresql Database Driver
 
 
 

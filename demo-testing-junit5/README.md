@@ -17,7 +17,7 @@ Dependencies with architecture projects
 
 Third Party Dependencies
 
-* **commons-lang3** [3.9] : class utilities
+* **commons-lang3** [3.11] : class utilities
 * **commons-collections4** [4.4] : collection utilities
 * **commons-io** [2.6] : class utilities for : file, streams, file comparator, file filters, ...
 
@@ -27,7 +27,7 @@ Third Party Dependencies
 
 * **junit-jupiter-engine** [5.6.0] : unit test framework v5 (Add JUnit Platform + API) Use write test (include : annotations, etc.)
 * **junit-vintage-engine** [5.6.0] : unit test framework for execute JUnit 3 and JUnit 4 (Add JUnit 4.13 transitively depends version vintage)
-* **junit-jupiter-params : tool used for parameterized test
+* **junit-jupiter-params [5.6.0] : tool used for parameterized test
 
 
 * **assertj-core** [3.11.1] : matching / asserts framework

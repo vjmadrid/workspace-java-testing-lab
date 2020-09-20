@@ -17,9 +17,14 @@ Dependencies with architecture projects
 
 Third Party Dependencies
 
-* **h2** [Spring Boot dependency] : H2 Database Engine
-* **flyway-core** [Spring Boot dependency] : Database version control
-* **postgresql** [Spring Boot dependency] : Spring Boot dependency
+* **spring-boot-starter-data-jpa** [Spring Boot Version] : Spring Boot Persistence Library
+* **spring-boot-starter-web** [Spring Boot Version] : Spring Boot web library
+* **spring-boot-starter-test** [Spring Boot Version] : Spring Boot testing library
+
+
+* **h2** [Spring Boot Version] : H2 Database Engine
+* **flyway-core** [Spring Boot Version] : Database version control
+* **postgresql** [Spring Boot Version] : Postgresql Database Driver
 
 
 
