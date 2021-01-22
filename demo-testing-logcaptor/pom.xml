@@ -1,0 +1,108 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.acme.testing.logcaptor</groupId>
+	<artifactId>demo-testing-logcaptor</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>demo-testing-logcaptor</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+
+
+		<!-- Compiler & Resources -->
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+
+		<!-- Dependency Versions -->
+		<version.logback>1.2.3</version.logback>
+		<version.apache.log4j-to-slf4j>2.14.0</version.apache.log4j-to-slf4j>
+
+		<!-- Plugins -->
+
+
+	</properties>
+
+	<dependencies>
+
+		<!-- *** Architecture Libraries *** -->
+
+
+		<!-- *** Spring Boot Starters *** -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>2.3.4.RELEASE</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<!-- *** Third Party Libraries *** -->
+		
+		<dependency>
+		    <groupId>ch.qos.logback</groupId>
+		    <artifactId>logback-classic</artifactId>
+		    <version>${version.logback}</version>
+		</dependency>
+		
+		<dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-to-slf4j</artifactId>
+            <version>${version.apache.log4j-to-slf4j}</version>
+        </dependency>
+		
+		<!-- logcaptor : capture logging entries for unit testing purposes -->
+		<dependency>
+		    <groupId>io.github.hakky54</groupId>
+		    <artifactId>logcaptor</artifactId>
+		    <version>2.3.2</version>
+		    <scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<finalName>demo-testing-logcaptor</finalName>
+		<plugins>
+
+			<!-- spring-boot-maven-plugin : Plugin used to work with Spring Boot application -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<!-- maven-compiler-plugin : Plugin used to compile the project source -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<!-- maven-resources-plugin : Plugin used to handle the project resources -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
