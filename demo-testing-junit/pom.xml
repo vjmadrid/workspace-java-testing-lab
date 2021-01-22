@@ -29,16 +29,7 @@
 
 		<!-- *** Architecture Libraries *** -->
 
-		<!-- Use Testing Architecture Library o specific junit version 4.x -->
-
-		<!-- 
-		<dependency>
-			<groupId>com.acme.architecture.testing</groupId>
-			<artifactId>architecture-testing</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>test</scope>
-		</dependency>
-		-->
+		<!-- Use Testing Architecture Library -->
 
 		<!-- *** Third Party Libraries *** -->
 

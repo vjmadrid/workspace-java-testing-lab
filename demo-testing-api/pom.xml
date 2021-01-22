@@ -11,14 +11,7 @@
 
 	<name>demo-testing-api</name>
 	<description></description>
-
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.0.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
-	</parent>
-
+	
 	<properties>
 
 		<!-- Compiler & Resources -->
@@ -27,22 +20,15 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<!-- Spring Boot Properties -->
-		<start-class>com.acme.testing.api.Application</start-class>
-		
-		<!-- API -->
-		<swagger.version>2.9.2</swagger.version>
+		<start-class>com.acme.testing.api.demo.Application</start-class>
 		
 		<!-- Verifier -->
 		<verifier.verification.file>src/test/verifier/verifications-test.xml</verifier.verification.file>
 
 		<!-- Testing -->
-		<skip.unit.tests>false</skip.unit.tests>
-		<skip.integration.tests>false</skip.integration.tests>
 
 		<!-- Plugins -->
-		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
-		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+
 	</properties>
 
 	<profiles>
@@ -76,73 +62,32 @@
 	<dependencies>
 
 		<!-- *** Architecture Libraries *** -->
-
-		<!-- *** Third Party Libraries *** -->
 		
-		<!-- 
-				Set of libraries for testing : Junit, Mockito, Hamcrest, AssertJ, JSONassert and JsonPath
-		 -->
+		<!-- demo-greeting : us example API REST with Hello World (Greeting) -->
+		
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			
-			<!-- Exclude Support JUni4
-			<exclusions>
-		        <exclusion>
-		            <groupId>org.junit.vintage</groupId>
-		            <artifactId>junit-vintage-engine</artifactId>
-		        </exclusion>
-		    </exclusions>
-			 -->
-			
+			<groupId>com.acme.testing.api.demo</groupId>
+			<artifactId>demo-greeting</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
+		<!-- *** Spring Boot Starters *** -->
+		
+		
+		<!-- *** Third Party Libraries *** -->
 		
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-		</dependency>
-		
-		<dependency>
-		   <groupId>org.springframework.boot</groupId>
-		   <artifactId>spring-boot-starter-webflux</artifactId>
+			<version>4.5.12</version>
 		</dependency>
 		
 		<dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
+            <version>3.3.10.RELEASE</version>
             <scope>test</scope>
         </dependency>
-		
-		<!-- To reload the code when changes made -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
-			<scope>runtime</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>${swagger.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>${swagger.version}</version>
-		</dependency>
 
 	</dependencies>
 

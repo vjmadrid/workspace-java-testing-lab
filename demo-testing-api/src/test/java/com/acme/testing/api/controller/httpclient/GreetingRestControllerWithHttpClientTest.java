@@ -1,7 +1,7 @@
 package com.acme.testing.api.controller.httpclient;
 
 import static org.hamcrest.CoreMatchers.containsString;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,19 +13,23 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.acme.testing.api.constant.GreetingRestApiConstant;
+import com.acme.testing.api.config.ComponentScanConfig;
+import com.acme.testing.api.demo.constant.GreetingRestApiConstant;
 
-@RunWith(SpringRunner.class)
+
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes={ComponentScanConfig.class})
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class GreetingRestControllerWithHttpClientTest {
 
@@ -37,7 +41,7 @@ public class GreetingRestControllerWithHttpClientTest {
 	@Autowired
 	private TestRestTemplate template;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 
 	}
