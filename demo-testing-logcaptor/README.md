@@ -20,8 +20,8 @@ Third Party Dependencies
 * **spring-boot-starter-test** [Spring Boot Version] : Spring Boot testing library
 
 
-* **logback-classic** [Spring Boot Version] : H2 Database Engine
-* **log4j-to-slf4j** [Spring Boot Version] : H2 Database Engine
+* **logback-classic** [Spring Boot Version] : Logging
+* **log4j-to-slf4j** [Spring Boot Version] : Apache Log4j binding between Log4j 2 API and SLF4J.
 * **logcaptor** [2.3.2] : Capture logging entries for unit testing purposes
 
 
